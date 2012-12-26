@@ -624,6 +624,7 @@ input[type="submit"]:active, input[type="button"]:active
 
 background: #4FB8FF;
 }
+/*
 button
 {
 padding: 10px;
@@ -642,9 +643,9 @@ background: #007ED8;
 }
 button:active
 {
-
 background: #4FB8FF;
 }
+*/
 #boutonie
 {
 padding: 10px;

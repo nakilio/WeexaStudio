@@ -151,8 +151,10 @@ function clickProgress(idPlayer, event) {
 
 <audio id="lecteur" ontimeupdate="update()">
 	<!--<source id="source" src="http://people.xiph.org/~giles/2012/opus/ehren-paper_lights-64.opus"/>-->
-	<source id="source" src="son/pop.ogg"/>
-</audio>
+	<!--<source id="source" src="son/pop.ogg"/>-->
+	<source id="source" src="son/kalimba.opus"/>
+
+	</audio>
 
 <div id="corplecteur">
 <div id="lentillepiste">
