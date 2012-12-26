@@ -1,0 +1,87 @@
+<?php
+//------------------------------------------------------------------------------------------- //-/
+//     API File Générator Language (FGL)                                             //---/
+//     créé par Weexa Studio                                                               //------/
+//     Licence Creative Commons Attribution -                             //--------/
+//     Pas d’Utilisation Commerciale - Partage dans                 //-----------/
+//     les Mêmes Conditions 3.0 non transposé.                    //--------------/
+//--------------------------------------------------------------------------- //-----------------/
+
+
+function randomName($caractlong)
+{
+$i = 0;
+while($i < $caractlong) {
+		$characts    = 'abcdefghijklmnpqrstuvwxyz';
+        //$characts   .= 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';	
+		$characts   .= '1234567890'; 
+        $chiffre = substr($characts,rand()%(strlen($characts)),1);  // On génère le captcha aléatoire
+        $chiffres[$i] = $chiffre;
+        $i++;
+}
+$nombre = null;
+// On explore le tableau $chiffres afin d'y afficher toutes les entrées qui s'y trouvent
+foreach ($chiffres as $caractere) {
+        $nombre .= $caractere;
+}
+return $nombre;
+}
+
+function ZIParchiver($archivename, $file)
+{
+  // appel de la classe
+    require_once('zip.php');
+    $filename = $file;
+    $content = $file;
+    // contenu du fichier
+    $fp = fopen ($filename, 'r');
+    $content = fread($fp, filesize($filename));
+    fclose ($fp);
+    
+    // création d'un objet 'zipfile'
+    $zip = new zipfile();
+    // ajout du fichier dans cet objet
+    $zip->addfile($content, $filename);
+    // production de l'archive' Zip
+    $archive = $zip->file();
+    
+    // entêtes HTTP
+    header('Content-Type: application/x-zip');
+    // force le téléchargement
+    header('Content-Disposition: inline; filename='.$archivename.'.zip');
+    
+    // envoi du fichier au navigateur
+    echo $archive;
+}
+
+function saveIn($file, $txt)
+{
+// 1 : on ouvre le fichier
+$monfichier = fopen($file, 'a+');
+fputs($monfichier, $txt);
+fclose($monfichier);	
+}
+function readFile($file)
+{
+// 1 : on ouvre le fichier
+$monfichier = fopen($file, 'a+');
+$nombre_ligne_fichier=substr_count($monfichier, '\n');
+while ($ligne = $nombre_ligne_fichier)
+{
+      	$contenuligne = fgets($monfichier);
+	$ligne++;
+}
+fclose($monfichier);
+return $contenuligne;	
+}
+
+function lineCounterSQL($hostBDD, $userBDD, $passwordBDD, $table)
+{
+$db = mysql_connect($hostBDD, $userBDD, $passwordBDD)  or die('Erreur de connexion '.mysql_error());
+	mysql_select_db($bdd ,$db)  or die('Erreur de selection '.mysql_error()); 
+  $sql = "SELECT COUNT(*) NBR_ENTREE FROM $table";
+	$req = mysql_query($sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+    $row=mysql_fetch_object($req);
+
+return $row->NBR_ENTREE;
+}
