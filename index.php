@@ -1,10 +1,10 @@
-  <!--[if IE]>
+<?php session_start();?> 
+ <!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
 <link rel="icon" type="image/x-icon" href="favicon.ico" />
 <?php
-session_start();
 include("config.php");
 include("FGL/FGL.php");
 
