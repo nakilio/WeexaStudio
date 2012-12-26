@@ -14,7 +14,7 @@ include('studioID/session.php');
 </form>
 </fieldset>
 </div>
-<div class="panelWphoto">
+<div id="panelWphoto">
 	
 <?php
 if (!empty($_GET['i']))
@@ -42,10 +42,10 @@ $image = $_GET['i'];
       echo '
 	  
 	<div class="socialbar">
-		<button href="pages/photo_dl.php?download='.$image.'&dir=users/'.$pseudo.'/photo/">Download</button>
+		<a id="bouton" href="pages/photo_dl.php?download='.$image.'&dir=users/'.$pseudo.'/photo/">Download</a>
 		<div class="socialbutton">
-			<a onClick="window.open(\'http://twitter.com/share?url='.$urlShare.'&via=WeexaStudio\', \'sharer\', \'toolbar=0,status=0,width=548,height=325\');" target="_parent" href="javascript: void(0)"><img src="weexaphoto/ico-twitter.png"/></a>
-			<a onClick="window.open(\'http://www.facebook.com/sharer.php?s=100&amp;p[title]='.$title.'&amp;p[summary]='.$summaryFB.'&amp;p[url]='.$urlShare.'&amp;&p[images][0]='.$miniatureFB.'\', \'sharer\', \'toolbar=0,status=0,width=548,height=325\');" target="_parent" href="javascript: void(0)"><img src="weexaphoto/ico-facebook.png"/></a>
+			<a onClick="window.open(\'http://twitter.com/share?url='.$urlShare.'&via=WeexaStudio\', \'sharer\', \'toolbar=0,status=0,width=548,height=325\');" target="_parent" href="javascript: void(0)"><img src="images/ico-twitter.png"/></a>
+			<a onClick="window.open(\'http://www.facebook.com/sharer.php?s=100&amp;p[title]='.$title.'&amp;p[summary]='.$summaryFB.'&amp;p[url]='.$urlShare.'&amp;&p[images][0]='.$miniatureFB.'\', \'sharer\', \'toolbar=0,status=0,width=548,height=325\');" target="_parent" href="javascript: void(0)"><img src="images/ico-facebook.png"/></a>
 		</div>
 		<input readonly="readonly" type="text" value="' . $url . '" size="60"/>
 	</div>
@@ -78,7 +78,7 @@ if(!empty($fichier)){
 	sort($fichier);// pour le tri croissant, rsort() pour le tri décroissa, nt
 		foreach($fichier as $lien) {
 
-echo '<a href="index.php?site=photo&i='.$lien.'"><img style="max-width: 150px;max-height: 150px; margin: 10px; " src="'.$dir_nom.'/'.$lien.'"/></a><a class="delimages" href="index.php?site=photo&deli='.$lien.'"><img src="images/delete.png"/></a>';
+echo '<a href="index.php?site=photo&i='.$lien.'#panelWphoto"><img style="max-width: 150px;max-height: 150px; margin: 10px; " src="'.$dir_nom.'/'.$lien.'"/></a><a class="delimages" href="index.php?site=photo&deli='.$lien.'"><img src="images/delete.png"/></a>';
 
 		}
  }
