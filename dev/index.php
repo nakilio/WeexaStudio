@@ -79,6 +79,7 @@ function closebox()
 </script>
     </head>
    <body>
+   <img src="../images/github.png" style="position: absolute; top: 0px; right: 0px; z-index: 10000;"/>
 	<nav>
 		<ul>
 			<li><img src="images/logo.png" alt="logo"/></li>

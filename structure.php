@@ -83,7 +83,7 @@ function closebox()
 		<ul>
 			<li><img src="images/logo.png" alt="logo"/></li>
 			<li id="menuapp"><a href="#" onMouseOver="affichagemenu()" onMouseOut="deaffichagemenu()"><img src="images/flechemenubas.png" alt="menu"/></a></li>
-			<div id="menu" onMouseOver="affichagemenu()" onMouseOut="deaffichagemenu()"><a href="index.php"><div class="item"><img src="images/thumb-1.gif"/></br>Accueil</div></a><a href="index.php?site=musique&page"><div class="item" ><img src="images/thumb-3.png"/></br>Musique</div></a><a href="index.php?site=software"><div class="item" ><img src="images/thumb-4.gif"/></br>Software</div></a><a href="index.php?site=photo"><div class="item" ><img src="images/weexaphotologo.png"/></br>Photo</div></a><a href="index.php?site=enplus"><div class="item" ><img src="images/thumb-5.png"/></div></a></div>
+			<div id="menu" onMouseOver="affichagemenu()" onMouseOut="deaffichagemenu()"><a href="index.php"><div class="item"><img src="images/thumb-1.gif"/></br>Accueil</div></a><a href="index.php?site=musique&page"><div class="item" ><img src="images/thumb-3.png"/></br>MusicWorks</div></a><a href="index.php?site=software"><div class="item" ><img src="images/thumb-4.gif"/></br>CodeMaker</div></a><a href="index.php?site=photo"><div class="item" ><img src="images/weexaphotologo.png"/></br>Photo</div></a><a href="index.php?site=enplus"><div class="item" ><img src="images/thumb-5.png"/></div></a></div>
 		</ul>
 				<div class="button_group"><?php 
 				if(isset($_SESSION['pseudo']))
