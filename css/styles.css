@@ -10,6 +10,9 @@ body
 	padding: 0;
 	text-align: center;
 }
+img {
+    border: 0;
+}
 nav
 {
 	background: #5e5d5d;
